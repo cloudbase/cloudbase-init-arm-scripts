@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "components": [
+    "Microsoft.VisualStudio.Component.CoreEditor",
+    "Microsoft.VisualStudio.Workload.CoreEditor",
+    "Microsoft.VisualStudio.Component.Roslyn.Compiler",
+    "Microsoft.Component.MSBuild",
+    "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+    "Microsoft.VisualStudio.Component.VC.Redist.14.Latest",
+    "Microsoft.VisualStudio.Component.VC.CMake.Project",
+    "Microsoft.VisualStudio.Component.Windows10SDK.17763",
+    "Microsoft.Component.VC.Runtime.UCRTSDK",
+    "Microsoft.VisualStudio.Component.VC.140",
+    "Microsoft.VisualStudio.Component.VC.Tools.ARM64",
+    "Microsoft.VisualStudio.Component.UWP.VC.ARM64",
+    "Microsoft.VisualStudio.Component.VC.v141.ARM",
+    "Microsoft.VisualStudio.Component.VC.v141.ARM64",
+    "Microsoft.VisualStudio.Component.VC.ATL.ARM64",
+    "Microsoft.VisualStudio.Component.VC.Redist.MSM",
+    "Microsoft.VisualStudio.Component.VC.14.26.ATL.ARM64",
+    "Microsoft.VisualStudio.Component.VC.14.26.MFC.ARM64"
+  ]
+}

@@ -1,0 +1,35 @@
+name: Build Python for Windows ARM64
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python-remote: ['https://github.com/ader1990/cpython']
+        python-branch: ['v3.8.5-win-arm64']
+
+    steps:
+      - name: Compile Python
+        run: |
+          git clone ${{ matrix.python-remote }}
+          cd cpython
+          git checkout ${{ matrix.python-branch }}
+          PCbuild\build.bat -e -p ARM64
+
+      - name: Create zip
+        shell: cmd
+        run: |
+          mkdir cpython\PCBuild\arm64\lib
+          mkdir cpython\PCBuild\arm64\include
+          mkdir cpython\PCBuild\arm64\libs
+          
+          xcopy /i /e cpython\lib\*.* cpython\PCBuild\arm64\lib
+          xcopy /i /e cpython\include\*.* cpython\PCBuild\arm64\include
+          xcopy /i /e cpython\PC\pyconfig.h cpython\PCBuild\arm64\include
+          xcopy.exe /y "cpython\PCBuild\arm64\python*.lib" "cpython\PCBuild\arm64\libs\"
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: cpython-arm64
+          path: cpython\PCBuild\arm64
