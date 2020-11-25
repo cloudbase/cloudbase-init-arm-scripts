@@ -6,14 +6,14 @@ OpenSSL sources: https://github.com/openssl/openssl.
 
 ### Requirements:
 
-  * Visual Studio 2017 or 2019.
+  * Visual Studio 2017 or 2019.<br/>
     See [vsconfig.txt](../../vsconfig.txt) for Visual Studio installation configuration.
   * Windows 10 ADK
-  * Perl
-    Strawberry Perl can be used: http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-32bit-PDL.zip
-  * nasm
-    You can get a binary installed from the msys64 binary folder (C:\msys64\usr\bin).
-    Use a 32bit one when building on an ARM64 machine (C:\msys32\usr\bin).
+  * Perl (Strawberry Perl for Windows)<br/>
+    Download link: http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-32bit-PDL.zip
+  * nasm<br/>
+    You can get a binary installed from the msys64 binary folder (C:\msys64\usr\bin).<br/>
+    Use a 32bit one when building on an ARM64 machine (C:\msys32\usr\bin).<br/>
     Installation: pacman -Sy nasm
 
 ### Build for X64

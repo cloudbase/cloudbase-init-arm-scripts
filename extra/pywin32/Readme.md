@@ -6,10 +6,10 @@ PyWin32 sources: https://github.com/mhammond/pywin32.
 
 ### Requirements:
 
-  * Visual Studio 2017 or 2019.
+  * Visual Studio 2017 or 2019.<br/>
     See [vsconfig.txt](../../vsconfig.txt) for Visual Studio installation configuration.
-  * Windows 10 ADK
-  * Python 3.8.x or higher
+  * Windows 10 ADK<br/>
+  * Python 3.8.x or higher<br/>
 
 ### Build for ARM64
 
