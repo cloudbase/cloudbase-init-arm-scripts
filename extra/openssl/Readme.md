@@ -50,7 +50,7 @@ You can download jom binary from: http://download.qt.io/official_releases/jom/.
 You need to add the "/FS" flag to Perl Configure. Use as many thread as you prefer (62 is a good  trade-off).
 
 ```cmd
-perl Configure VC-WIN64A /FS
-REM perl Configure VC-WIN64-ARM /FS
+perl Configure VC-WIN64A --prefix=D:/opensslx64-bin --openssldir=D:/opensslx64-dir shared/FS
+REM perl Configure VC-WIN64-ARM --prefix=D:/opensslarm64-bin --openssldir=D:/opensslarm64-dir shared /FS
 jom -j 62
 ```
