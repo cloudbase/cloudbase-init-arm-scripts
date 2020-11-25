@@ -16,7 +16,7 @@ OpenSSL sources: https://github.com/openssl/openssl.
     Use a 32bit one when building on an ARM64 machine (C:\msys32\usr\bin).<br/>
     Installation: pacman -Sy nasm
 
-### Build for X64
+### Build for X64 on X64
 Make sure perl.exe and nasm.exe is in your path.
 Grab a cup of coffee, as it takes a while (around 30 minutes).
 
@@ -29,7 +29,7 @@ perl Configure VC-WIN64A
 nmake
 ```
 
-### Build for ARM64
+### Build for ARM64 on ARM64
 
 For OpenSSL 1.1.0 or 1.1.1, this patch needs to be applied:
 
@@ -42,15 +42,21 @@ perl Configure VC-WIN64-ARM
 nmake
 ```
 
+ARM64 builds can be cross built on X64 if you run:
+
+```cmd
+call %VCVARSALL% amd64_arm64 10.0.17763.0 & set
+```
+
 ### Fast build
 
 Use jom to speed up the build.
 You can download jom binary from: http://download.qt.io/official_releases/jom/.
 
-You need to add the "/FS" flag to Perl Configure. Use as many thread as you prefer (62 is a good  trade-off).
+You need to add the "/FS" flag to Perl Configure. Use as many threads as you prefer (62 is a good  trade-off).
 
 ```cmd
-perl Configure VC-WIN64A --prefix=D:/opensslx64-bin --openssldir=D:/opensslx64-dir shared/FS
+perl Configure VC-WIN64A --prefix=D:/opensslx64-bin --openssldir=D:/opensslx64-dir shared /FS
 REM perl Configure VC-WIN64-ARM --prefix=D:/opensslarm64-bin --openssldir=D:/opensslarm64-dir shared /FS
 jom -j 62
 ```
