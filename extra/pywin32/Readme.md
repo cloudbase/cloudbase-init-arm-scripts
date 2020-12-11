@@ -25,6 +25,7 @@ Example batch script (using VS2019 and Windows 10 SDK 10.0.17763.0):
 
 ```cmd
 set VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+set MC_PATH="C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\arm64\mc.exe"
 call %VCVARSALL% x86_arm64 10.0.17763.0 & set
 
 pushd "win32\src"
